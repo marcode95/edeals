@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :groups
+  resources :transactions
   resources :users
   root "sessions#welcome"
   get 'login', to: 'sessions#new'   
