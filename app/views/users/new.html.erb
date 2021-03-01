@@ -1,0 +1,10 @@
+<div class="card text-center mx-auto">
+  <div class="card-body">
+    <h1 class="card-title">Sign Up</h1>
+      <%= form_for @user do |f|%>  
+      <%= f.label :name%><br>  
+      <%= f.text_field :name , class: "my-3" %><br>   
+      <%= f.submit 'Create user', class: 'btn btn-primary' %>
+    <%end%>
+  </div>
+</div>

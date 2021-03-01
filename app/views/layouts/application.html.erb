@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edeals</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_user %>
+      <nav class="navbar navbar-light bg-light">
+        <%= link_to "Sign out", sign_out_path, method: :delete, class: "mx-5 link text-secondary" %>
+        <%= link_to 'Main Page', welcome_path, class: "link" %>
+        <span class="navbar-text mx-5">
+          Logged in as <%= current_user.name %>
+        </span>
+      </nav>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
