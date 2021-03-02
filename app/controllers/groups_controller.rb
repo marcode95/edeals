@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.all.order(name: :asc)
   end
 
   # GET /groups/1 or /groups/1.json
@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
 
   # POST /groups or /groups.json
   def create
-    @group = Group.new(group_params)
+    @group = Group.new(group_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @group.save

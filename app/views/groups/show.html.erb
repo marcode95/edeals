@@ -3,6 +3,11 @@
 <p>
   <strong>Name:</strong>
   <%= @group.name %>
+  <% @group.deals.each do |deal| %>
+    <%= deal.name %>
+    <%= deal.user.name %>
+    <%= link_to 'Show', deal %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |

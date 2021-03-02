@@ -1,7 +1,7 @@
 module TransactionsHelper
-  def total_transaction_sum
+  def total_transaction_sum(transactionlist)
     sum = 0
-    @owntransactions.each do |transaction|
+    (transactionlist).each do |transaction|
       sum += transaction.amount
     end
     sum

@@ -3,8 +3,11 @@ class TransactionsController < ApplicationController
 
   # GET /transactions or /transactions.json
   def index
-    @transactions = Transaction.all
-    @owntransactions = Transaction.where(user: current_user)
+    @owntransactions = Transaction.where(user: current_user).order(date: :desc)
+  end
+
+  def external_index
+    @external_transactions = Transaction.where(user: current_user).order(date: :desc)
   end
 
   # GET /transactions/1 or /transactions/1.json
