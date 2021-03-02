@@ -3,6 +3,10 @@
 <p>
   <strong>Name:</strong>
   <%= @group.name %>
+  <% if @group.image.attached? %>
+    <img src="(url_for(@group.image))" alt="">
+    <%= image_tag url_for(@group.image) %>
+  <% end %>
   <% @group.deals.each do |deal| %>
     <%= deal.name %>
     <%= deal.user.name %>
@@ -12,3 +16,4 @@
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
+<%= link_to 'New Transaction', new_transaction_path(@group) %> |
