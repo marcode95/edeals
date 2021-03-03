@@ -1,10 +1,7 @@
-<div class="card text-center mx-auto">
-  <div class="card-body">
-    <h1 class="card-title">Sign Up</h1>
-      <%= form_for @user do |f|%>  
-      <%= f.label :name%><br>  
-      <%= f.text_field :name , class: "my-3" %><br>   
-      <%= f.submit 'Create user', class: 'btn btn-primary' %>
+<div class="startpage">
+      <%= form_for @user, :html => {:class => 'd-flex flex-column align-items-center'} do |f|%>  
+      <%= f.label :name, nil, class: 'text-field-label' %><br>  
+      <%= f.text_field :name, class: 'text-field rounded-pill mb-5' %><br>   
+      <%= f.submit 'Create user', class: 'welcome-buttons rounded-pill' %>
     <%end%>
-  </div>
 </div>
