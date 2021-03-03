@@ -17,7 +17,7 @@
 
 html, body {
   width: 100%;
-  height:100%;
+  height: 100%;
   font-family: Mulish;
   color: white;
 }
@@ -28,5 +28,29 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   font-size: 10rem;
+}
+
+p {
+  font-family: Mulish;
+}
+
+.navbar {
+  height: 280px;
+}
+
+.nav-element {
+  font-size: 3rem;
+}
+
+.nav-header {
+  position: absolute;
+  font-size: 5.5rem;
+  top: 145px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.grey {
+  color: #434b54;
 }
 

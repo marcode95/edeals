@@ -16,4 +16,8 @@ module TransactionsHelper
     end
     sum
   end
+
+  def eurofy(amount)
+    amount.to_s.insert(-3, ',').insert(-1, '€')
+  end
 end

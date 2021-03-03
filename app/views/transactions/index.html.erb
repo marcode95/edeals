@@ -1,8 +1,11 @@
+<%= render 'layouts/nav' %>
 <p id="notice"><%= notice %></p>
+<h2 class="nav-header">Transactions</h2>
 
-<h1>Transactions</h1>
-
-<%= total_transaction_sum %>
+<div class="transaction-sum-section d-flex justify-content-between align-items-center border-bottom grey px-5">
+  <p class="total-sum">Total Sum:</p>
+  <%= eurofy(total_transaction_sum) %>
+</div>
 
 <table>
   <thead>
