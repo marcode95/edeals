@@ -1,10 +1,7 @@
-<div class="card text-center mx-auto">
-  <div class="card-body">
-    <h1 class="card-title">Login</h1>   
-    <%= form_tag '/login' do %>   
-      <%= label_tag :name%>   
-      <%= text_field_tag :name, "", class: 'my-3' %>   
-      <%= submit_tag 'Login', class: 'btn btn-primary'%>
-    <%end%>
-  </div>
+<div class="startpage d-flex flex-column align-items-center w-100">
+  <%= form_tag '/login', class: 'd-flex flex-column align-items-center w-100' do %>   
+    <%= label_tag :name, nil, class: 'text-field-label' %>   
+    <%= text_field_tag :name, nil, class: 'text-field rounded-pill mb-5' %>   
+    <%= submit_tag 'Login', class: 'welcome-buttons rounded-pill'%>
+  <%end%>
 </div>
