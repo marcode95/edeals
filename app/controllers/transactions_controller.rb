@@ -31,7 +31,6 @@ class TransactionsController < ApplicationController
       if @transaction.save
         format.html { redirect_to @transaction, notice: "Transaction was successfully created." }
         format.json { render :show, status: :created, location: @transaction }
-        @transaction.groups << @group
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @transaction.errors, status: :unprocessable_entity }

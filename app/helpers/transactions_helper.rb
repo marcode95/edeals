@@ -18,6 +18,12 @@ module TransactionsHelper
   end
 
   def eurofy(amount)
-    amount.to_s.insert(-3, ',').insert(-1, '€')
+    if amount < 10
+      amount.to_s.insert(0, '0,0').insert(-1, '€')
+    elsif amount < 100
+      amount.to_s.insert(0, '0,').insert(-1, '€')
+    else
+      amount.to_s.insert(-3, ',').insert(-1, '€')
+    end
   end
 end

@@ -3,10 +3,39 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .transaction-sum-section {
-  font-size: 3.5rem;
+  font-size: 4rem;
   height: 10rem;
 }
 
 .total-sum {
+  font-size: 4rem;
+}
+
+.total-sum-amount {
+  font-weight: 700;
+}
+
+.trans-container {
+  height: 1200px;
+  padding: 30px;
+}
+
+.single-trans-container {
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.trans-name {
   font-size: 3.5rem;
 }
+
+.trans-amount {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.trans-date {
+  font-size: 2rem;
+}
+
+

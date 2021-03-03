@@ -4,33 +4,29 @@
 
 <div class="transaction-sum-section d-flex justify-content-between align-items-center border-bottom grey px-5">
   <p class="total-sum">Total Sum:</p>
-  <%= eurofy(total_transaction_sum) %>
+  <div class="total-sum-amount"><%= eurofy(total_transaction_sum) %></div>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @owntransactions.each do |transaction| %>
-      <tr>
-        <td><%= transaction.name %></td>
-        <td><%= transaction.amount %></td>
-        <td><%= transaction.date %></td>
-        <td><%= link_to 'Show', transaction %></td>
-        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="trans-container border bg-grey">
+  <% @owntransactions.each do |transaction| %>
+    <div class="single-trans-container bg-white grey d-flex">
+      <% if transaction.groups.first and transaction.groups.first.image %>
+        <%= image_tag url_for(transaction.groups.first.image), class: 'icon' %>
+      <% else %>
+        <img class="icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">
+      <% end %>
+      <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
+        <div class="single-trans-container-info-up d-flex justify-content-between">
+          <div class="trans-name"><%= transaction.name %></div>
+          <div class="trans-amount"><%= eurofy(transaction.amount) %></div>
+        </div>
+        <div class="single-trans-container-info-down">
+          <div class="trans-date"><%= transaction.date %></div>
+        </div>
+      </div>
+    </div>  
+  <% end %>
+</div>
 <br>
 
 <%= link_to 'New Transaction', new_transaction_path %>
