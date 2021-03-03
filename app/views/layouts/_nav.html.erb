@@ -1,0 +1,9 @@
+<% if current_user %>
+<nav class="navbar navbar-light bg-light">
+<%= link_to "Sign out", sign_out_path, method: :delete, class: "mx-5 link text-secondary" %>
+<%= link_to 'Main Page', welcome_path, class: "link" %>
+<span class="navbar-text mx-5">
+Logged in as <%= current_user.name %>
+</span>
+</nav>
+<% end %>
