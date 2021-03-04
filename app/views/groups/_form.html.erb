@@ -1,3 +1,4 @@
+<div class="main-page form-main-page bg-grey">
 <%= form_with(model: group, local: true) do |form| %>
   <% if group.errors.any? %>
     <div id="error_explanation">
@@ -11,17 +12,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="form-main-content">
+    <div class="field mb-0">
+      <%= form.text_field :name, placeholder: 'Name', class: 'form-field border-0' %>
+    </div>
 
     <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+</div>
+  <div class="actions footer mb-0">
+    <%= form.submit 'Create Group', :class => 'submit-button text-white rounded w-100 h-100'%>
   </div>
 <% end %>
