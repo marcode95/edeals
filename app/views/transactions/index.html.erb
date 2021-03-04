@@ -10,11 +10,11 @@
   <div class="border w-100"></div>
 </div>
 
-<div class="main-transactions bg-grey">
+<div class="main-page bg-grey">
   <div class="trans-container">
     <% @owntransactions.each do |transaction| %>
       <div class="single-trans-container bg-white grey d-flex">
-        <% if transaction.groups.first and transaction.groups.first.image %>
+        <% if transaction.groups.first and transaction.groups.first.image.attached? %>
           <%= image_tag url_for(transaction.groups.first.image), class: 'icon' %>
         <% else %>
           <img class="icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">

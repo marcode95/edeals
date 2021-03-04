@@ -17,6 +17,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/new
   def new
     @transaction = Transaction.new
+    @groups = Group.all
   end
 
   # GET /transactions/1/edit
@@ -26,7 +27,7 @@ class TransactionsController < ApplicationController
   # POST /transactions or /transactions.json
   def create
     @transaction = Transaction.new(transaction_params.merge(user_id: current_user.id))
-
+    @transaction.groups << Group.where(id: params[:transaction][:group_ids]) 
     respond_to do |format|
       if @transaction.save
         format.html { redirect_to @transaction, notice: "Transaction was successfully created." }
@@ -68,6 +69,6 @@ class TransactionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transaction_params
-      params.require(:transaction).permit(:name, :amount, :date)
+      params.require(:transaction).permit(:name, :amount, :date, :group_ids)
     end
 end

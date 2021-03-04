@@ -1,32 +1,43 @@
-<%= form_with(model: transaction, local: true) do |form| %>
-  <% if transaction.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+<div class="main-page form-main-page bg-grey">
+  <%= form_with(model: transaction, local: true) do |form| %>
+    <% if transaction.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
 
-      <ul>
-        <% transaction.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% transaction.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="form-main-content">
+    <div class="field mb-0">
+      <%= form.text_field :name, placeholder: 'Name', class: 'form-field border-0' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <div class="w-100 d-flex justify-content-center">
+      <div class="line"></div>
+    </div>
+    <div class="field mb-0">
+      <%= form.number_field :amount, placeholder: 'Amount in Cents', class: 'form-field border-0' %>
+    </div>
+    <div class="w-100 d-flex justify-content-center">
+      <div class="line"></div>
+    </div>
+    <div class="field datefield d-flex justify-content-center bg-white mb-0">
+      <%= form.date_select :date %>
+    </div>
+    <div class="w-100 d-flex justify-content-center">
+      <div class="line"></div>
+    </div>
+    <div class="field mb-0">
+      <%= form.select :group_ids, Group.all.map{|x| [x.name,x.id]}, {}, multiple: true, class: 'form-field border-0' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="actions">
+</div>
+  <div class="actions footer">
     <%= form.submit %>
   </div>
 <% end %>
