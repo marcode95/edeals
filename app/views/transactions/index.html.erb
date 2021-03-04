@@ -1,32 +1,40 @@
-<%= render 'layouts/nav' %>
-<p id="notice"><%= notice %></p>
-<h2 class="nav-header">Transactions</h2>
+<div class="header">
+  <%= render 'layouts/nav' %>
 
-<div class="transaction-sum-section d-flex justify-content-between align-items-center border-bottom grey px-5">
-  <p class="total-sum">Total Sum:</p>
-  <div class="total-sum-amount"><%= eurofy(total_transaction_sum) %></div>
+  <h2 class="nav-header">Transactions</h2>
+
+  <div class="transaction-sum-section d-flex justify-content-between align-items-center grey px-5">
+    <p class="total-sum">Total Sum:</p>
+    <div class="total-sum-amount"><%= eurofy(total_transaction_sum) %></div>
+  </div>
+  <div class="border w-100"></div>
 </div>
 
-<div class="trans-container border bg-grey">
-  <% @owntransactions.each do |transaction| %>
-    <div class="single-trans-container bg-white grey d-flex">
-      <% if transaction.groups.first and transaction.groups.first.image %>
-        <%= image_tag url_for(transaction.groups.first.image), class: 'icon' %>
-      <% else %>
-        <img class="icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">
-      <% end %>
-      <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
-        <div class="single-trans-container-info-up d-flex justify-content-between">
-          <div class="trans-name"><%= transaction.name %></div>
-          <div class="trans-amount"><%= eurofy(transaction.amount) %></div>
+<div class="main-transactions bg-grey">
+  <div class="trans-container">
+    <% @owntransactions.each do |transaction| %>
+      <div class="single-trans-container bg-white grey d-flex">
+        <% if transaction.groups.first and transaction.groups.first.image %>
+          <%= image_tag url_for(transaction.groups.first.image), class: 'icon' %>
+        <% else %>
+          <img class="icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">
+        <% end %>
+        <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
+          <div class="single-trans-container-info-up d-flex justify-content-between">
+            <div class="trans-name"><%= transaction.name %></div>
+            <div class="trans-amount"><%= eurofy(transaction.amount) %></div>
+          </div>
+          <div class="single-trans-container-info-down">
+            <div class="trans-date"><%= transaction.date %></div>
+          </div>
         </div>
-        <div class="single-trans-container-info-down">
-          <div class="trans-date"><%= transaction.date %></div>
-        </div>
-      </div>
-    </div>  
-  <% end %>
+      </div>  
+    <% end %>
+  </div>
 </div>
-<br>
 
-<%= link_to 'New Transaction', new_transaction_path %>
+<%= link_to new_transaction_path, :action => 'go' do %>
+<div class="footer d-flex justify-content-center align-items-center">
+  <p class="small-footer d-flex justify-content-center align-items-center text-white rounded w-100 h-100">New Transaction</p>
+</div>
+<% end %>
