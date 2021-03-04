@@ -1,29 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="header">
+  <%= render 'layouts/nav' %>
 
-<h1>Groups</h1>
+  <h2 class="nav-header">Groups</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Created at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="border w-100"></div>
+</div>
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= group.created_at.to_date %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'main-page' %>
 
-<br>
-
-<%= link_to 'New Group', new_group_path %>
+<%= link_to new_group_path, :action => 'go' do %>
+<div class="footer d-flex justify-content-center align-items-center">
+  <p class="small-footer d-flex justify-content-center align-items-center text-white rounded w-100 h-100">New Group</p>
+</div>
+<% end %>

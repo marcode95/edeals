@@ -1,0 +1,24 @@
+<div class="main-page group-main-page bg-grey">
+  <div class="trans-container">
+    <% @groups.each do |group| %>
+      <%= link_to group, :action => 'go' do %>
+      <div class="single-trans-container bg-white grey d-flex">
+        <% if group.image.attached? %>
+          <%= image_tag url_for(group.image), class: 'icon' %>
+        <% else %>
+          <img class="icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">
+        <% end %>
+        <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
+          <div class="single-trans-container-info-up d-flex justify-content-between">
+            <div class="trans-name"><%= group.name %></div>
+            <div class="trans-amount"></div>
+          </div>
+          <div class="single-trans-container-info-down">
+            <div class="trans-date"><%= group.created_at.to_date %></div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

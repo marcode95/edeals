@@ -10,28 +10,7 @@
   <div class="border w-100"></div>
 </div>
 
-<div class="main-page bg-grey">
-  <div class="trans-container">
-    <% @owntransactions.each do |transaction| %>
-      <div class="single-trans-container bg-white grey d-flex">
-        <% if transaction.groups.first and transaction.groups.first.image.attached? %>
-          <%= image_tag url_for(transaction.groups.first.image), class: 'icon' %>
-        <% else %>
-          <img class="icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">
-        <% end %>
-        <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
-          <div class="single-trans-container-info-up d-flex justify-content-between">
-            <div class="trans-name"><%= transaction.name %></div>
-            <div class="trans-amount"><%= eurofy(transaction.amount) %></div>
-          </div>
-          <div class="single-trans-container-info-down">
-            <div class="trans-date"><%= transaction.date %></div>
-          </div>
-        </div>
-      </div>  
-    <% end %>
-  </div>
-</div>
+<%= render 'main-page' %>
 
 <%= link_to new_transaction_path, :action => 'go' do %>
 <div class="footer d-flex justify-content-center align-items-center">

@@ -1,35 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="header">
+  <%= render 'layouts/nav' %>
 
-<h1>External Transactions</h1>
+  <h2 class="nav-header">Ext. Transactions</h2>
 
-<%= total_external_transaction_sum %>
+  <div class="transaction-sum-section d-flex justify-content-between align-items-center grey bg-white px-5">
+    <p class="total-sum">Total Sum:</p>
+    <div class="total-sum-amount"><%= eurofy(total_external_transaction_sum) %></div>
+  </div>
+  <div class="border w-100"></div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render 'ext-main-page'%>
 
-  <tbody>
-    <% @owntransactions.each do |transaction| %>
-      <% if transaction.groups.empty?%>
-      <tr>
-        <td><%= transaction.name %></td>
-        <td><%= transaction.amount %></td>
-        <td><%= transaction.date %></td>
-        <td><%= link_to 'Show', transaction %></td>
-        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Transaction', new_transaction_path %>
+<%= link_to new_transaction_path, :action => 'go' do %>
+<div class="footer d-flex justify-content-center align-items-center">
+  <p class="small-footer d-flex justify-content-center align-items-center text-white rounded w-100 h-100">New Transaction</p>
+</div>
+<% end %>
