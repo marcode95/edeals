@@ -31,13 +31,13 @@
     <div class="w-100 d-flex justify-content-center">
       <div class="line"></div>
     </div>
-    <div class="field mb-0">
-      <%= form.select :group_ids, Group.all.map{|x| [x.name,x.id]}, {}, multiple: true, class: 'form-field border-0' %>
+    <div class="field mb-0 group-field-container d-flex justify-content-center bg-white">
+      <%= form.select :group_ids, Group.all.map{|x| [x.name,x.id]}, {}, multiple: true, class: 'group-field border-0 text-center' %>
     </div>
   </div>
 
 </div>
-  <div class="actions footer">
-    <%= form.submit %>
+  <div class="actions footer mb-0">
+    <%= form.submit 'Create Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
   </div>
 <% end %>
