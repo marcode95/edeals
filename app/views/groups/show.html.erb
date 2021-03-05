@@ -1,12 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="header">
+  <%= render 'layouts/nav' %>
+
+  <h2 class="nav-header">Group</h2>
+
+  <div class="group-show-header d-flex justify-content-start align-items-between">
+    <div class="group-show-header-img">
+      <% if @group.image.attached? %>
+        <%= image_tag url_for(@group.image), class: 'group-show-icon' %>
+      <% else %>
+          <img class="icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">
+      <% end %>
+    </div>
+    <div class="group-show-header-right">
+      <div class="group-show-header-name grey">
+        <%= @group.name %>
+      </div>
+      <div class="group-show-header-info">
+        <p class="group-show-header-info-field grey mb-0"> 
+          Total Sum: <span><%= group_transaction_sum %></div></span>
+        </p>
+        <br>
+        <p class="group-show-header-info-field grey mb-0"> 
+          Total Transactions: <span><%= group_transaction_count %></div></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <p>
   <strong>Name:</strong>
   <%= @group.name %>
-  <% if @group.image.attached? %>
-    <img src="(url_for(@group.image))" alt="">
-    <%= image_tag url_for(@group.image) %>
-  <% end %>
+
   <% @group.deals.each do |deal| %>
     <%= deal.name %>
     <%= deal.user.name %>
