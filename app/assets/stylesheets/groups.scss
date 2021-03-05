@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.group-header {
+  border-bottom: 3px solid grey;
+} 
+
 #group_image {
   font-size: 3rem;
   width: 85%;
@@ -27,13 +31,13 @@
 }
 
 .group-show-header-name {
-  font-size: 6rem;
+  font-size: 5.5rem;
 }
 
 .group-show-header-info {
-
+  text-align: right;
 }
 
 .group-show-header-info-field {
-  font-size: 3rem;
+  font-size: 2.8rem;
 }

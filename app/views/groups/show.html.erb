@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header group-header">
   <%= render 'layouts/nav' %>
 
   <h2 class="nav-header">Group</h2>
@@ -11,15 +11,14 @@
           <img class="icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">
       <% end %>
     </div>
-    <div class="group-show-header-right">
+    <div class="group-show-header-right d-flex flex-column align-items-end w-100">
       <div class="group-show-header-name grey">
         <%= @group.name %>
       </div>
       <div class="group-show-header-info">
-        <p class="group-show-header-info-field grey mb-0"> 
+        <p class="group-show-header-info-field grey mt-2 mb-4"> 
           Total Sum: <span><%= group_transaction_sum %></div></span>
         </p>
-        <br>
         <p class="group-show-header-info-field grey mb-0"> 
           Total Transactions: <span><%= group_transaction_count %></div></span>
         </p>
@@ -28,16 +27,33 @@
   </div>
 </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-
-  <% @group.deals.each do |deal| %>
-    <%= deal.name %>
-    <%= deal.user.name %>
-    <%= link_to 'Show', deal %>
-  <% end %>
-</p>
+<div class="main-page single-group-main-page bg-grey">
+  <div class="trans-container">
+    <% @group.deals.each do |deal| %>
+      <div class="single-trans-container bg-white grey d-flex">
+        <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
+          <div class="single-trans-container-info-up d-flex justify-content-between">
+            <div class="trans-name"><%= deal.name %></div>
+          </div>
+          <div class="single-trans-container-info-down">
+            <div class="trans-date"><%= deal.user.name %></div>
+          </div>
+        </div>
+        <div class="trans-name"><%= eurofy(deal.amount) %></div>
+      </div>  
+    <% end %>
+      <div class="single-trans-container bg-white grey d-flex">
+        <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
+          <%= form_with(model: @group, local: true) do |form| %>
+            <%= form.select :other_transaction_ids, check_if_other_group.map{|x| [x.name,x.id]}, {}, multiple: true, class: 'group-field border-0 text-center' %>
+            <div class="actions footer mb-0">
+              <%= form.submit 'Create Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
+            </div>
+          <% end %>
+        </div>
+      </div>  
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
