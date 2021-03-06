@@ -3,26 +3,26 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .header {
-	position:fixed;
-	width:100%;
-	left:0;
-	top:0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
 }
 
 .main-page {
-	position: absolute;
-	top: 27.5rem;
-	bottom: 260px;
-	width: 100%;
-	overflow: auto;
+  position: absolute;
+  top: 27.5rem;
+  bottom: 260px;
+  width: 100%;
+  overflow: auto;
 }
 
 .group-main-page {
-	top: 17.5rem;
+  top: 17.5rem;
 }
 
 .single-group-main-page {
-	top: 38.314rem;
+  top: 38.314rem;
 }
 
 .ext-main-page {
@@ -71,12 +71,12 @@
 }
 
 .footer {
-	bottom:0;
-	top:auto;
+  bottom: 0;
+  top: auto;
   height: 260px;
-  position:fixed;
-	width:100%;
-	left:0;
+  position: fixed;
+  width: 100%;
+  left: 0;
   padding: 50px;
   background: linear-gradient(-45deg, #5fb523, #86e443, #5fb523);
   background-size: 400% 400%;
@@ -85,13 +85,15 @@
 
 @keyframes gradient {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
+
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
+
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 
@@ -103,17 +105,14 @@
 
 /* form */
 
-textarea, input { 
-  outline: none; 
+textarea,
+input {
+  outline: none;
 }
 
 .form-main-page {
   top: 17.5rem;
   padding: 30px;
-}
-
-.form-main-content {
-  
 }
 
 .field {
