@@ -1,0 +1,5 @@
+<% if @group.image.attached? %>
+  <%= image_tag url_for(@group.image), class: 'group-show-icon' %>
+<% else %>
+    <img class="group-show-icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">
+<% end %>

@@ -5,11 +5,7 @@
 
   <div class="group-show-header d-flex justify-content-start align-items-between">
     <div class="group-show-header-img">
-      <% if @group.image.attached? %>
-        <%= image_tag url_for(@group.image), class: 'group-show-icon' %>
-      <% else %>
-          <img class="icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a325e722353999.5631184951d59.jpg" alt="">
-      <% end %>
+      <%= render 'image' %>
     </div>
     <div class="group-show-header-right d-flex flex-column align-items-end w-100">
       <div class="group-show-header-name grey">
@@ -47,7 +43,7 @@
           <%= form_with(model: @group, local: true) do |form| %>
             <%= form.select :other_transaction_ids, check_if_other_group.map{|x| [x.name,x.id]}, {}, multiple: true, class: 'group-field border-0 text-center' %>
             <div class="actions footer mb-0">
-              <%= form.submit 'Create Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
+              <%= form.submit 'Add Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
             </div>
           <% end %>
         </div>

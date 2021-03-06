@@ -31,7 +31,7 @@ class TransactionsController < ApplicationController
     @transaction.groups << Group.where(id: params[:transaction][:group_ids]) 
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to @transaction, notice: "Transaction was successfully created." }
+        format.html { redirect_to transactions_path, notice: "Transaction was successfully created." }
         format.json { render :show, status: :created, location: @transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
