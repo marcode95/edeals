@@ -10,9 +10,7 @@ module TransactionsHelper
   def total_external_transaction_sum
     sum = 0
     @owntransactions.each do |transaction|
-      if transaction.groups.empty?
-        sum += transaction.amount
-      end
+      sum += transaction.amount if transaction.groups.empty?
     end
     sum
   end
