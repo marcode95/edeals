@@ -34,10 +34,14 @@ gem 'hirb', '~> 0.7.3'
 gem 'bootstrap', '~> 5.0.0.beta2'
 # jquery
 gem 'jquery-rails'
+# rubocop
+gem 'rubocop', '~>0.81.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # rspec
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
 end
 
 group :development do
@@ -55,7 +59,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rspec'
+  gem 'shoulda-matchers', '~> 4.0'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
