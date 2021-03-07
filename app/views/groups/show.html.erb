@@ -40,10 +40,11 @@
     <% end %>
       <div class="single-trans-container bg-white grey d-flex">
         <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
+
           <%= form_with(model: @group, local: true) do |form| %>
             <%= form.select :other_transaction_ids, check_if_other_group.map{|x| [x.name,x.id]}, {}, multiple: true, class: 'group-field border-0 text-center' %>
             <div class="actions footer mb-0">
-              <%= form.submit 'Add Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
+            <%= form.submit 'Add Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
             </div>
           <% end %>
         </div>
