@@ -1,8 +1,6 @@
 <div class="header group-header">
   <%= render 'layouts/nav' %>
-
   <h2 class="nav-header">Group</h2>
-
   <div class="group-show-header d-flex justify-content-start align-items-between">
     <div class="group-show-header-img">
       <%= render 'image' %>
@@ -22,7 +20,6 @@
     </div>
   </div>
 </div>
-
 <div class="main-page single-group-main-page bg-grey">
   <div class="trans-container">
     <% @group.deals.each do |deal| %>
@@ -40,18 +37,16 @@
     <% end %>
       <div class="single-trans-container bg-white grey d-flex">
         <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
-
           <%= form_with(model: @group, local: true) do |form| %>
-            <%= form.select :other_transaction_ids, check_if_other_group.map{|x| [x.name,x.id]}, {}, multiple: true, class: 'group-field border-0 text-center' %>
+            <%= form.select :other_transaction_ids, check_if_other_group.map{|transc| [transc.name, transc.id]}, {}, class: 'group-field border-0 text-center' %>
             <div class="actions footer mb-0">
-            <%= form.submit 'Add Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
+               <%= form.submit 'Add Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
             </div>
           <% end %>
         </div>
       </div>  
   </div>
 </div>
-
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
 <%= link_to 'New Transaction', new_transaction_path(@group) %> |
