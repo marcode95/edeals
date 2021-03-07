@@ -36,6 +36,12 @@
   background: none;
   border: 5px white solid;
   padding: 17px 70px;
+  transition: all .2s ease-in-out;
+}
+
+.welcome-buttons:hover {
+  background: none;
+  transform: scale(1.07);
 }
 
 .tag {

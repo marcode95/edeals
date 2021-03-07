@@ -160,11 +160,15 @@ input {
 .line {
   width: 85%;
   height: 0;
-  border: 1px solid grey;
+  border: 3px solid grey;
 }
 
 .submit-button {
   font-size: 5.5rem;
   background-color: transparent;
   border: 3px solid white;
+}
+
+.form-container {
+  height: auto;
 }
