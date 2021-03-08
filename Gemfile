@@ -40,8 +40,11 @@ gem 'rubocop', '~>0.81.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+<<<<<<< HEAD
   # rspec
   gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
+=======
+>>>>>>> cf14afac38958bbf592fc42ec288d295b8c08d7c
 end
 
 group :development do
@@ -62,3 +65,9 @@ group :test do
   gem 'shoulda-matchers', '~> 4.0'
   gem 'webdrivers'
 end
+<<<<<<< HEAD
+=======
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+>>>>>>> cf14afac38958bbf592fc42ec288d295b8c08d7c
