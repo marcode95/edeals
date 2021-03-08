@@ -8,8 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require jquery3
-require popper
-require bootstrap-sprockets
+//require popper
+//require bootstrap-sprockets
 
 
 
