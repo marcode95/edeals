@@ -1,9 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[show edit update destroy]
-<<<<<<< HEAD
   before_action :require_login
-=======
->>>>>>> cf14afac38958bbf592fc42ec288d295b8c08d7c
 
   # GET /transactions or /transactions.json
   def index

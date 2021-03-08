@@ -1,9 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[show edit update destroy]
-<<<<<<< HEAD
   before_action :require_login
-=======
->>>>>>> cf14afac38958bbf592fc42ec288d295b8c08d7c
 
   # GET /groups or /groups.json
   def index
@@ -39,23 +36,11 @@ class GroupsController < ApplicationController
 
   # PATCH/PUT /groups/1 or /groups/1.json
   def update
-<<<<<<< HEAD
     selected_id = params[:group][:other_transaction_ids]
     transaction = Transaction.find(selected_id)
     group = Group.find(params[:id])
     group.deals << transaction
     redirect_to group_path(group)
-=======
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
-        format.json { render :show, status: :ok, location: @group }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
->>>>>>> cf14afac38958bbf592fc42ec288d295b8c08d7c
   end
 
   # DELETE /groups/1 or /groups/1.json

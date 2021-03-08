@@ -34,10 +34,12 @@
     <div class="field mb-0 group-field-container d-flex justify-content-center bg-white">
       <%= form.select :group_ids, Group.all.map{|x| [x.name,x.id]}, {}, multiple: true, class: 'group-field border-0 text-center' %>
     </div>
+    <div class="actions footer mb-0">
+      <button type="submit" class="submit-button-fuck-you text-white rounded w-100 h-100">Submit</button>
+    </div>
   </div>
 
 </div>
-  <div class="actions footer mb-0">
-    <%= form.submit 'Create Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
-  </div>
+
+  
 <% end %>

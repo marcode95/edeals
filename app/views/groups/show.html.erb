@@ -40,7 +40,7 @@
           <%= form_with(model: @group, local: true) do |form| %>
             <%= form.select :other_transaction_ids, check_if_other_group.map{|transc| [transc.name, transc.id]}, {}, class: 'group-field border-0 text-center w-100' %>
             <div class="actions footer mb-0">
-               <%= form.submit 'Add Transaction', :class => 'submit-button text-white rounded w-100 h-100'%>
+                   <button type="submit" class="submit-button-fuck-you text-white rounded w-100 h-100">Submit</button>
             </div>
           <% end %>
         </div>
