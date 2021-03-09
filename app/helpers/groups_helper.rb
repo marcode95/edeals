@@ -18,4 +18,20 @@ module GroupsHelper
     end
     @otherdeals
   end
+
+  def attached?(obj)
+    if obj.image.attached?
+      render partial: 'single-image'
+    else
+      render partial: 'no-image'
+    end
+  end
+
+  def index_attached?(obj)
+    if obj.image.attached?
+      render partial: 'index-single-image', locals: {group: obj}
+    else
+      render partial: 'no-image'
+    end
+  end
 end

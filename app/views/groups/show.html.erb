@@ -3,7 +3,7 @@
   <h2 class="nav-header">Group</h2>
   <div class="group-show-header d-flex justify-content-start align-items-between">
     <div class="group-show-header-img">
-      <%= render 'image' %>
+      <%= attached?(@group) %>
     </div>
     <div class="group-show-header-right d-flex flex-column align-items-end w-100">
       <div class="group-show-header-name grey">
