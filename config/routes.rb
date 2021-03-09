@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :groups
-  resources :transactions
-  resources :users
+  resources :groups, only: [:index, :show, :new, :create, :update]
+  resources :transactions, only: [:index, :new, :create]
+  resources :users, only: [:new, :create]
   root "sessions#welcome"
   get 'login', to: 'sessions#new'   
   post 'login', to: 'sessions#create'   
