@@ -17,14 +17,9 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create transaction' do
     assert_difference('Transaction.count') do
-<<<<<<< HEAD
-      post transactions_url,
-           params: { transaction: { amount: @transaction.amount, date: @transaction.date, name: @transaction.name } }
-=======
       # rubocop:disable Layout/LineLength
       post transactions_url, params: { transaction: { amount: @transaction.amount, date: @transaction.date, name: @transaction.name } }
       # rubocop:enable Layout/LineLength
->>>>>>> cf14afac38958bbf592fc42ec288d295b8c08d7c
     end
 
     assert_redirected_to transaction_url(Transaction.last)
@@ -41,14 +36,9 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update transaction' do
-<<<<<<< HEAD
-    patch transaction_url(@transaction),
-          params: { transaction: { amount: @transaction.amount, date: @transaction.date, name: @transaction.name } }
-=======
     # rubocop:disable Layout/LineLength
     patch transaction_url(@transaction), params: { transaction: { amount: @transaction.amount, date: @transaction.date, name: @transaction.name } }
     # rubocop:enable Layout/LineLength
->>>>>>> cf14afac38958bbf592fc42ec288d295b8c08d7c
     assert_redirected_to transaction_url(@transaction)
   end
 
