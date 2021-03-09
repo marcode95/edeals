@@ -21,6 +21,10 @@ https://www.loom.com/share/a451dd1b90894964b2c5af36d7428a4a
 
 To be updated!
 
+## ERD
+
+![img](./app/assets/images/erd.jpeg)
+
 ## Getting Started
 
 **To get this project set up on your local machine follow these simple steps:**
