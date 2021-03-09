@@ -17,9 +17,6 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
-  # GET /groups/1/edit
-  def edit; end
-
   # POST /groups or /groups.json
   def create
     @group = Group.new(group_params.merge(user_id: current_user.id))
@@ -41,15 +38,6 @@ class GroupsController < ApplicationController
     group = Group.find(params[:id])
     group.deals << transaction
     redirect_to group_path(group)
-  end
-
-  # DELETE /groups/1 or /groups/1.json
-  def destroy
-    @group.destroy
-    respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
