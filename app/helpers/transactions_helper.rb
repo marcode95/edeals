@@ -24,4 +24,18 @@ module TransactionsHelper
       amount.to_s.insert(-3, ',').insert(-1, '€')
     end
   end
+
+  def no_groups?(trans)
+    if trans.groups.empty?
+      render partial: 'single-transactions', locals: {transaction: trans}
+    end
+  end
+
+  def trans_img_attached?(trans)
+    if trans.groups.first and trans.groups.first.image.attached?
+      render partial: 'single-image', locals: {transaction: trans}
+    else
+      render partial: 'groups/no-image'
+    end
+  end
 end

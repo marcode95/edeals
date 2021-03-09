@@ -2,11 +2,7 @@
   <div class="trans-container">
     <% @owntransactions.each do |transaction| %>
       <div class="single-trans-container bg-white grey d-flex">
-        <% if transaction.groups.first and transaction.groups.first.image.attached? %>
-          <%= image_tag url_for(transaction.groups.first.image), class: 'icon' %>
-        <% else %>
-          <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png" alt="">
-        <% end %>
+        <%= trans_img_attached?(transaction) %>
         <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
           <div class="single-trans-container-info-up d-flex justify-content-between">
             <div class="trans-name"><%= transaction.name %></div>
