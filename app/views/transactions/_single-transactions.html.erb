@@ -1,0 +1,12 @@
+<div class="single-trans-container bg-white grey d-flex">
+  <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png" alt="">
+  <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
+      <div class="single-trans-container-info-up d-flex justify-content-between">
+      <div class="trans-name"><%= transaction.name %></div>
+      <div class="trans-amount"><%= eurofy(transaction.amount) %></div>
+      </div>
+      <div class="single-trans-container-info-down">
+      <div class="trans-date"><%= transaction.date %></div>
+      </div>
+  </div>
+</div>  

@@ -1,0 +1,15 @@
+<div class="header">
+  <%= render 'layouts/nav' %>
+
+  <h2 class="nav-header">Groups</h2>
+
+  <div class="border w-100"></div>
+</div>
+
+<%= render 'main-page' %>
+
+<%= link_to new_group_path, :action => 'go' do %>
+<div class="footer d-flex justify-content-center align-items-center">
+  <p class="small-footer d-flex justify-content-center align-items-center text-white rounded w-100 h-100">New Group</p>
+</div>
+<% end %>

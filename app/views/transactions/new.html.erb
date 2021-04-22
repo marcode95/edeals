@@ -1,0 +1,9 @@
+<div class="header">
+  <%= render 'layouts/nav' %>
+  <h2 class="nav-header">New Transaction</h2>
+  <div class="border w-100"></div>
+</div>
+
+<%= render 'form', transaction: @transaction %>
+
+<%= link_to 'Back', transactions_path %>

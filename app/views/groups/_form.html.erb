@@ -1,0 +1,19 @@
+<div class="main-page form-main-page bg-grey">
+<%= form_with(model: group, local: true) do |form| %>
+  <div class="form-main-content">
+    <div class="field mb-0">
+      <%= form.text_field :name, placeholder: 'Name', class: 'form-field border-0' %>
+    </div>
+    <div class="w-100 d-flex justify-content-center">
+      <div class="line"></div>
+    </div>
+    <div class="field image-field bg-white grey mb-0">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+    <div class="actions footer mb-0">
+      <button type="submit" class="submit-button-fuck-you text-white rounded w-100 h-100">Create Group</button>
+    </div>
+  </div>
+</div>
+<% end %>
