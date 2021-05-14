@@ -13,13 +13,9 @@ Keep your spendings in check with E-DEALS! Create reminders for transactions you
 - Bootstrap
 - Rspec
 
-## Presentation
-
-https://www.loom.com/share/a451dd1b90894964b2c5af36d7428a4a
-
 ## Live Demo
 
-To be updated!
+https://desolate-beach-15262.herokuapp.com/
 
 ## Getting Started
 
