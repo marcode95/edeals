@@ -1,0 +1,7 @@
+<div class="main-page bg-grey">
+  <div class="trans-container">
+    <% @owntransactions.each do |transaction| %>
+      <%= no_groups?(transaction) %>
+    <% end %>
+  </div>
+</div>

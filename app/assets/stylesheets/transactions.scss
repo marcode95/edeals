@@ -1,0 +1,174 @@
+// Place all the styles related to the Transactions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.main-page {
+  position: absolute;
+  top: 27.5rem;
+  bottom: 260px;
+  width: 100%;
+  overflow: auto;
+}
+
+.group-main-page {
+  top: 17.5rem;
+}
+
+.single-group-main-page {
+  top: 38.314rem;
+}
+
+.ext-main-page {
+  margin-top: 27.5rem;
+}
+
+.transaction-sum-section {
+  font-size: 64px;
+  height: 9.7rem;
+}
+
+.border {
+  background-color: lightgrey;
+  height: 0.3rem;
+}
+
+.total-sum {
+  font-size: 64px;
+}
+
+.total-sum-amount {
+  font-weight: 700;
+}
+
+.trans-container {
+  height: 1000px;
+  padding: 30px;
+}
+
+.single-trans-container {
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.trans-name {
+  font-size: 56px;
+}
+
+.trans-amount {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.trans-date {
+  font-size: 32px;
+}
+
+.footer {
+  bottom: 0;
+  top: auto;
+  height: 260px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  padding: 50px;
+  background: linear-gradient(-45deg, #5fb523, #86e443, #5fb523);
+  background-size: 400% 400%;
+  animation: gradient 4s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.small-footer {
+  font-size: 88px;
+  background-color: transparent;
+  border: 3px solid white;
+}
+
+/* form */
+
+textarea,
+input {
+  outline: none;
+}
+
+.form-main-page {
+  top: 17.5rem;
+  padding: 30px;
+}
+
+.field {
+  margin-bottom: 0;
+}
+
+#transaction_date_1i {
+  width: 25%;
+}
+
+#transaction_date_2i {
+  width: 25%;
+}
+
+#transaction_date_3i {
+  width: 25%;
+}
+
+.form-field {
+  color: grey;
+  font-size: 52px;
+  text-align: center;
+  width: 100%;
+  height: 13rem;
+}
+
+.datefield {
+  height: 13rem;
+  padding: 3rem;
+  font-size: 32px;
+}
+
+.group-field-container {
+  width: 100%;
+  height: 13rem;
+  padding: 1.5rem;
+}
+
+.group-field {
+  color: grey;
+  font-size: 72px;
+  width: 80%;
+}
+
+.line {
+  width: 85%;
+  height: 0;
+  border: 3px solid grey;
+}
+
+.submit-button-fuck-you {
+  font-size: 88px;
+  background-color: transparent;
+  border: 3px solid white;
+}
+
+.form-container {
+  height: auto;
+}

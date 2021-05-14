@@ -1,0 +1,49 @@
+<div class="header group-header">
+  <%= render 'layouts/nav' %>
+  <h2 class="nav-header">Group</h2>
+  <div class="group-show-header d-flex justify-content-start align-items-between">
+    <div class="group-show-header-img">
+      <%= attached?(@group) %>
+    </div>
+    <div class="group-show-header-right d-flex flex-column align-items-end w-100">
+      <div class="group-show-header-name grey">
+        <%= @group.name %>
+      </div>
+      <div class="group-show-header-info">
+        <p class="group-show-header-info-field grey mt-2 mb-4"> 
+          Total Sum: <span><%= group_transaction_sum %></div></span>
+        </p>
+        <p class="group-show-header-info-field grey mb-0"> 
+          Total Transactions: <span><%= group_transaction_count %></div></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main-page single-group-main-page bg-grey">
+  <div class="trans-container">
+    <% @group.deals.each do |deal| %>
+      <div class="single-trans-container bg-white grey d-flex">
+        <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
+          <div class="single-trans-container-info-up d-flex justify-content-between">
+            <div class="trans-name"><%= deal.name %></div>
+          </div>
+          <div class="single-trans-container-info-down">
+            <div class="trans-date"><%= deal.user.name %></div>
+          </div>
+        </div>
+        <div class="trans-name"><%= eurofy(deal.amount) %></div>
+      </div>  
+    <% end %>
+      <div class="single-trans-container form-container bg-white grey d-flex">
+        <div class="single-trans-container-info d-flex flex-column justify-content-between w-100">
+          <%= form_with(model: @group, local: true) do |form| %>
+            <%= form.select :other_transaction_ids, check_if_other_group.map{|transc| [transc.name, transc.id]}, {}, class: 'group-field border-0 text-center w-100' %>
+            <div class="actions footer mb-0">
+                   <button type="submit" class="submit-button-fuck-you text-white rounded w-100 h-100">Submit</button>
+            </div>
+          <% end %>
+        </div>
+      </div>  
+  </div>
+</div>

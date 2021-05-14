@@ -1,0 +1,9 @@
+<div class="header">
+  <%= render 'layouts/nav' %>
+  <h2 class="nav-header">New Group</h2>
+  <div class="border w-100"></div>
+</div>
+
+<%= render 'form', group: @group %>
+
+<%= link_to 'Back', groups_path %>
